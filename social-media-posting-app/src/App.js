@@ -1,19 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './components/Login';
-import PostComposer from './components/PostComposer';
+import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/compose" element={<PostComposer />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <header className="App-header">
+        <h1>Welcome to the CMS</h1>
+        <p>Your one-stop solution for posting across multiple social media platforms.</p>
+        <a
+          className="App-link"
+          href="www.facebook.com/tundeRogunmodede?mibexid=LQQJ4d"
+          onClick={() => alert('Start posting!')}
+        >
+          Get Started
+        </a>
+      </header>
+    </div>
   );
-}
+};
 
 export default App;

@@ -1,23 +1,39 @@
 import React from 'react';
-//import { GoogleLogin } from 'react-oauth/google';
-//import { FacebookLogin } from 'react-oauth/facebook';
-import GoogleLogin from 'react-oauth/google';
-import FacebookLogin from 'react-oauth/facebook';
+import { GoogleLogin } from '@react-oauth/google';
+import FacebookLogin from 'react-facebook-login';
+
 const Login = () => {
-  const handleLoginSuccess = (response) => {
-    console.log("Login Success:", response);
+  const handleGoogleSuccess = (response) => {
+    console.log("Google Login Success:", response);
     // Handle token storage and API connection with backend
   };
 
-  const handleLoginFailure = (error) => {
-    console.error("Login Failed:", error);
+  const handleGoogleFailure = (error) => {
+    console.error("Google Login Failed:", error);
+  };
+
+  const handleFacebookResponse = (response) => {
+    console.log("Facebook Login Response:", response);
+    // Handle token storage and API connection with backend
   };
 
   return (
     <div>
       <h2>Login with Social Media</h2>
-      <GoogleLogin onSuccess={handleLoginSuccess} onError={handleLoginFailure} />
-      <FacebookLogin onSuccess={handleLoginSuccess} onError={handleLoginFailure} />
+
+      {/* Google OAuth Login */}
+      <GoogleLogin 
+        onSuccess={handleGoogleSuccess} 
+        onError={handleGoogleFailure} 
+      />
+
+      {/* Facebook OAuth Login */}
+      <FacebookLogin
+        appId="YOUR_FACEBOOK_APP_ID"
+        fields="name,email,picture"
+        callback={handleFacebookResponse}
+        icon="fa-facebook"
+      />
     </div>
   );
 };
