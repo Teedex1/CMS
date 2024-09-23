@@ -8,23 +8,58 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; /* Align items to the start */
   color: white;
+  padding: 20px; /* Padding around the header */
 }
 
-.App-link {
+.App-logo {
+  height: 80px; /* Adjust size as needed */
+  margin-right: 20px; /* Space to the right of the logo */
+}
+
+.content {
+  display: flex; /* Create a flex container */
+  flex: 1; /* Allow it to grow */
+  margin-left: 20px; /* Space from the logo */
+}
+.text-section {
+  flex: 2; /* Allow more space for the text */
+  text-align: left; /* Align text to the left */
+  margin-right: 20px; /* Space between text and buttons */
+  margin-top: 20px; /* Add space above the text */
+}
+/* .button-container {
+  flex: 1; /* Allow buttons to take up a portion of space */
+  /* display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  /*gap: 10px; /* Space between buttons */
+
+  .button-container {
+    flex: 1; /* Allow buttons to take up a portion of space */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+  }
+  
+  .auth-buttons {
+    display: flex;
+    flex-direction: column; /* Stack these buttons vertically */
+    gap: 10px; /* Space between Sign Up and Log In buttons */
+  }
+  
+.App-button {
+  background-color: transparent;
   color: #61dafb;
-  text-decoration: none;
-  font-size: 18px;
   border: 2px solid #61dafb;
   padding: 10px 20px;
+  font-size: 16px; /* Slightly smaller font size */
   border-radius: 5px;
-  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
 }
 
-.App-link:hover {
+.App-button:hover {
   background-color: #61dafb;
   color: #282c34;
 }
