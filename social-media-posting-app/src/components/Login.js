@@ -1,7 +1,8 @@
 import React from 'react';
-import { GoogleLogin } from 'react-oauth/google';
-import { FacebookLogin } from 'react-oauth/facebook';
-
+//import { GoogleLogin } from 'react-oauth/google';
+//import { FacebookLogin } from 'react-oauth/facebook';
+import GoogleLogin from 'react-oauth/google';
+import FacebookLogin from 'react-oauth/facebook';
 const Login = () => {
   const handleLoginSuccess = (response) => {
     console.log("Login Success:", response);
